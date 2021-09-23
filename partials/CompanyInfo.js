@@ -37,7 +37,7 @@ export default function CompanyInfo(props) {
 
     return(
         <div className="bg-gray-100 rounded px-4 py-4">
-            <div className="text-lg mb-4 mb-4">
+            <div className="text-lg mb-4">
                 <EditableLabelField {...props} />
             </div>
 
