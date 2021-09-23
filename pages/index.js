@@ -2,6 +2,7 @@ import Head from 'next/head'
 import InputField from 'partials/form/InputField';
 import DateField from 'partials/form/DateField';
 import CompanyInfo from 'partials/CompanyInfo';
+import ItemList from 'partials/ItemList';
 
 export default function Home() {
   return (
@@ -55,6 +56,10 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-x-8">
           <CompanyInfo title="Billed By" />
           <CompanyInfo title="Billed To" />
+        </div>
+
+        <div className="mt-8">
+          <ItemList/>
         </div>
       </main>
     </div>
