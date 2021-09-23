@@ -15,6 +15,22 @@ export default function CompanyInfo(props) {
         }
     }
 
+    const renderCountriesOptionField = () => {
+        if (countries.count > 0) {
+            return (
+                <select className="py-2 px-2 mb-4 w-full h-[36px]">
+                {countries.map(item=>(
+                    <option>{item.name}</option>
+                    ))}
+                </select>
+            )
+        } else {
+            return (
+                <InputField placeholder="Country Name" className="px-2 mb-4" />
+            )
+        }
+    }
+
     useEffect(()=>{
         getCountries();
     },[]);
@@ -25,12 +41,21 @@ export default function CompanyInfo(props) {
                 <EditableLabelField {...props} />
             </div>
 
-            <select className="py-2 px-2 mb-4 w-full h-[36px]">
-                {countries.map(item=>(
-                    <option>{item.name}</option>
-                ))}
-            </select>
-            <InputField placeholder="Company Name/Name" className="px-2" />
+            {renderCountriesOptionField()}
+
+            <InputField placeholder="Company Name/Name" className="px-2 mb-4" />
+
+            <InputField placeholder="Email" className="px-2 mb-4" />
+
+            <InputField placeholder="Phone" className="px-2 mb-4" />
+
+            <InputField placeholder="Address" className="px-2 mb-4" />
+
+            <div className="grid grid-cols-2 gap-x-4">
+                <InputField placeholder="City" className="px-2 mb-4" />
+                <InputField placeholder="Postal Code/Zip Code" className="px-2 mb-4" />
+            </div>
+            <InputField placeholder="State" className="px-2 mb-4" />
         </div>
     )
 }
