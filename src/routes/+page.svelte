@@ -1,32 +1,21 @@
 <script lang="ts">
-	import ItemsHolder from "$lib/components/ItemsHolder.svelte";
-	import { subtotal } from "$lib/store";
+	import InvoiceHeader from "$comp/InvoiceHeader.svelte";
+	import InvoiceContacts from "$comp/InvoiceContacts.svelte";
+	import ItemsHolder from "$comp/ItemsHolder.svelte";
+	import InvoiceFooter from "$comp/InvoiceFooter.svelte";
 </script>
 
 <section class="container mt-11">
-	<div class=" bg-white/20 p-6 border border-primary-400">
-		<div class="flex flex-row justify-between">
-			<div class="">
-				Add Your Logo
-			</div>
-			<div class="">
-				Invoice
-				<div class="input-group input-group-divider grid-cols-[auto_1fr_auto]">
-					<div class="input-group-shim">#</div>
-					<input type="search" placeholder="Search..." />
-				</div>
-			</div>
-		</div>
+	<div class="max-w-5xl mx-auto">
+		<div class=" bg-white/20 p-6 border border-primary-400">
 
-		<div class="flex flex-row justify-between">
-			<div class=" max-w-xs">
-				<textarea class="textarea resize-none" name="" id="" rows="2" placeholder="Who is this invoice from? (required)"></textarea>
-			</div>
-		</div>
+			<InvoiceHeader/>
+			<InvoiceContacts/>
 
-		<ItemsHolder />
+			<ItemsHolder />
+			<InvoiceFooter/>
+		</div>
 	</div>
-	Subtotal: {$subtotal}
 	<!-- end box -->
 </section>
 
