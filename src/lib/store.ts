@@ -29,5 +29,12 @@ const createItems = () => {
     }
 }
 
+export const details = writable({
+	number: '',
+	date: new Date()
+});
+
+export const logo = writable('');
+
 export const items = createItems();
 export const subtotal = derived(items, $items => $items.reduce((a, b) => a + b.total, 0));
