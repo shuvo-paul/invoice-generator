@@ -8,7 +8,8 @@
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import Header from '../lib/components/Header.svelte';
 
-	import {details, logo, billFrom, billTo} from '$lib/store';
+	import {details, logo, billFrom, billTo, items} from '$lib/store';
+	import type {IItem} from '$lib/store';
   import { onMount } from 'svelte';
 
 	let storeReady = false;
@@ -20,7 +21,8 @@
 			date: Date;
 		},
 		billFrom? : {},
-		billTo? : {}
+		billTo? : {},
+		items? : IItem[]
 	} = {};
 
 	onMount(() => {
@@ -33,6 +35,9 @@
 		const getLocalInvoice  = JSON.parse(localStorage.getItem('invoice') as string);
 		details.set({...getLocalInvoice?.details, date: new Date(getLocalInvoice?.details?.date)});
 		logo.set(getLocalInvoice?.logo);
+		billFrom.set(getLocalInvoice?.billFrom);
+		billTo.set(getLocalInvoice?.billTo);
+		items.setItems(getLocalInvoice?.items);
 		storeReady = true;
 	})
 
@@ -41,6 +46,7 @@
 			invoice.logo = $logo;
 			invoice.billFrom = $billFrom;
 			invoice.billTo = $billTo;
+			invoice.items = $items;
 			localStorage.setItem('invoice', JSON.stringify(invoice));
 		}
 </script>

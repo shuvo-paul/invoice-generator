@@ -10,15 +10,15 @@
         items.updateItem(index, {item, quantity, rate, total});
     };
 </script>
-<div class="grid grid-cols-12 ">    
+<div class="grid grid-cols-12 ">
     <div class="col-span-6">
-        <input type="text" bind:value={item}>
+        <input type="text" bind:value={item} placeholder="Item Name">
     </div>
     <div class="col-span-2">
-        <input type="text" bind:value={quantity}>
+        <input type="text" bind:value={quantity} placeholder="Quantity">
     </div>
     <div class="col-span-2">
-        <input type="text" bind:value={rate}>
+        <input type="text" bind:value={rate} placeholder="Rate">
     </div>
     <div class="col-span-2">
         <div class="flex flex-row">
