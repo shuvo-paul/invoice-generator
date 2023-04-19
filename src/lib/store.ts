@@ -53,6 +53,8 @@ export const billTo = writable({
 })
 
 export const logo = writable('');
+export const notes = writable('');
+export const terms = writable('');
 
 export const items = createItems();
 export const subtotal = derived(items, $items => $items.reduce((a, b) => a + parseFloat(b?.total! as string), 0));

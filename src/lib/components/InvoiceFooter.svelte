@@ -1,11 +1,11 @@
 <script>
-	import { subtotal } from "$lib/store";
+	import { subtotal, notes, terms } from "$lib/store";
 </script>
 
 <div class="grid grid-cols-12 gap-x-8">
 	<div class="col-span-7">
-		<textarea name="" id="" rows="5" placeholder="Notes"></textarea>
-		<textarea name="" id="" rows="5" placeholder="Terms"></textarea>
+		<textarea name="" id="" rows="3" placeholder="Notes" bind:value={$notes}></textarea>
+		<textarea name="" id="" rows="3" placeholder="Terms" bind:value={$terms}></textarea>
 	</div>
 	<div class="col-span-4 col-end-13">
 		<div class="grid grid-cols-1 gap-2">
