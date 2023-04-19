@@ -34,6 +34,20 @@ export const details = writable({
 	date: new Date()
 });
 
+export const billFrom = writable({
+	name: '',
+	email: '',
+	address: '',
+	phone: ''
+})
+
+export const billTo = writable({
+	name: '',
+	email: '',
+	address: '',
+	phone: ''
+})
+
 export const logo = writable('');
 
 export const items = createItems();
