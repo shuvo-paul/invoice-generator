@@ -1,5 +1,5 @@
 <script>
-	import { subtotal, notes, terms } from "$lib/store";
+	import { subtotal, notes, terms, discount, total, paid, due } from "$lib/store";
 </script>
 
 <div class="grid grid-cols-12 gap-x-8">
@@ -23,7 +23,16 @@
 					Discount:
 				</div>
 				<div class="value">
-					<input type="text" value={$subtotal} class="text-right">
+					<input type="text" bind:value={$discount} class="text-right">
+				</div>
+			</div>
+
+			<div class="grid grid-cols-2 gap-2">
+				<div class="label">
+					Total:
+				</div>
+				<div class="value">
+					<input type="text" value={$total} class="text-right" readonly>
 				</div>
 			</div>
 
@@ -32,7 +41,7 @@
 					Amount Paid:
 				</div>
 				<div class="value">
-					<input type="text" value={$subtotal} class="text-right">
+					<input type="text" bind:value={$paid} class="text-right">
 				</div>
 			</div>
 
@@ -41,7 +50,7 @@
 					Balance Due:
 				</div>
 				<div class="value">
-					<input type="text" value={$subtotal} class="text-right">
+					<input type="text" value={$due} class="text-right" readonly>
 				</div>
 			</div>
 		</div>

@@ -8,7 +8,7 @@
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import Header from '../lib/components/Header.svelte';
 
-	import {details, logo, billFrom, billTo, items, notes, terms} from '$lib/store';
+	import {details, logo, billFrom, billTo, items, notes, terms, paid} from '$lib/store';
 	import type {IItem} from '$lib/store';
   import { onMount } from 'svelte';
 
@@ -24,7 +24,8 @@
 		billTo? : {},
 		items? : IItem[],
 		notes?: string,
-		terms?: string
+		terms?: string,
+		paid?: number
 	} = {};
 
 	onMount(() => {
@@ -42,6 +43,7 @@
 		items.setItems(getLocalInvoice?.items);
 		notes.set(getLocalInvoice?.notes);
 		terms.set(getLocalInvoice?.terms);
+		paid.set(getLocalInvoice?.paid);
 		storeReady = true;
 	})
 
@@ -53,6 +55,7 @@
 			invoice.items = $items;
 			invoice.notes = $notes;
 			invoice.terms = $terms;
+			invoice.paid = $paid;
 			localStorage.setItem('invoice', JSON.stringify(invoice));
 		}
 </script>

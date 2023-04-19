@@ -58,3 +58,7 @@ export const terms = writable('');
 
 export const items = createItems();
 export const subtotal = derived(items, $items => $items.reduce((a, b) => a + parseFloat(b?.total! as string), 0));
+export const discount = writable(0);
+export const total = derived([subtotal, discount], ([$subtotal, $discount]) => $subtotal - $discount);
+export const paid = writable(0);
+export const due = derived([total, paid], ([$total, $paid]) => $total - $paid);
