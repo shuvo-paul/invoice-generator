@@ -7,7 +7,7 @@
 
 <section class="container mt-11 mb-11">
 	<div class="max-w-5xl mx-auto">
-		<div class=" bg-white/60 p-6 border border-primary-400">
+		<div id="invoice-wrapper" class=" bg-white/60 p-6 border border-primary-400">
 
 			<InvoiceHeader/>
 			<InvoiceContacts/>

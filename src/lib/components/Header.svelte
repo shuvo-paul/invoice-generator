@@ -1,5 +1,6 @@
 <script>
     import { AppBar } from '@skeletonlabs/skeleton';
+		import { downloadPdf } from '$lib/utils';
 </script>
 
 <!-- App Bar -->
@@ -8,6 +9,6 @@
         <strong class="text-xl uppercase">Invoice Generator</strong>
     </svelte:fragment>
     <svelte:fragment slot="trail">
-        <button class="btn btn-sm variant-ghost-surface">Download PDF</button>
+        <button on:click={downloadPdf} class="btn btn-sm variant-ghost-surface">Download PDF</button>
     </svelte:fragment>
 </AppBar>
