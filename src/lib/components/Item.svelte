@@ -23,7 +23,7 @@
     <div class="col-span-2">
         <div class="flex flex-row">
             <input type="text" bind:value={total} readonly >
-            <button on:click={()=>items.removeItem(index)}>-</button>
+            <button class="ignore-element" on:click={()=>items.removeItem(index)}>-</button>
         </div>
     </div>
 </div>

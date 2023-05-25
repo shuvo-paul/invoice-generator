@@ -11,6 +11,6 @@
         <Item {...item} {index} />
     {/each}
     <div class="flex flex-row justify-end">
-        <button class="btn variant-filled" on:click={items.addItem} >+</button>
+        <button class="btn variant-filled ignore-element" on:click={items.addItem} >+</button>
     </div>
 </div>
