@@ -14,7 +14,7 @@
 					Subtotal:
 				</div>
 				<div class="value">
-					<input type="text" value={$subtotal} class="text-right">
+					<input type="text" value={$subtotal.toFixed(2)} class="text-right">
 				</div>
 			</div>
 
@@ -32,7 +32,7 @@
 					Total:
 				</div>
 				<div class="value">
-					<input type="text" value={$total} class="text-right" readonly>
+					<input type="text" value={$total.toFixed(2)} class="text-right" readonly>
 				</div>
 			</div>
 
@@ -50,7 +50,7 @@
 					Balance Due:
 				</div>
 				<div class="value">
-					<input type="text" value={$due} class="text-right" readonly>
+					<input type="text" value={$due.toFixed(2)} class="text-right" readonly>
 				</div>
 			</div>
 		</div>

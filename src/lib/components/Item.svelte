@@ -2,11 +2,11 @@
     import { items } from "$lib/store";
     export let index: number;
     export let item: string;
-    export let quantity: number;
-    export let rate: number;
-    export let total: number;
+    export let quantity: number | string;
+    export let rate: number | string;
+    export let total: number | string;
     $: {
-        total = rate * quantity;
+        total = parseFloat(rate as string) * parseFloat(quantity as string) || 0;
         items.updateItem(index, {item, quantity, rate, total});
     };
 </script>
