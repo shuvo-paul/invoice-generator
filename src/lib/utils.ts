@@ -4,7 +4,7 @@ import jspdf from 'jspdf';
 export const downloadPdf = () => {
 	const invoiceEl = document.getElementById('invoice-wrapper') as HTMLElement;
 	html2canvas(invoiceEl, {
-		ignoreElements: (element) => element.className.includes('ignore-element'),
+
 	}).then((canvas) => {
 		const imgData = canvas.toDataURL('image/png', 1.0);
 		const pdf = new jspdf('p', 'pt', 'a4');
